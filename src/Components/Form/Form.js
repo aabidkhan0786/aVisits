@@ -30,7 +30,7 @@ const Form = ({currentId, setCurrentId}) => {
     const handleSubmit= async (e)=>{
         e.preventDefault();
         if(currentId === 0){
-            if(postData.creator =="" || postData.selectedFile == "" ){
+            if(postData.creator ==="" || postData.selectedFile ==="" ){
                 return alert("Please atleast fill Creator name and Image field !")
 
             }

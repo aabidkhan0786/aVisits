@@ -1,4 +1,4 @@
-export default (posts = [], action)=>{
+const v = (posts = [], action)=>{
     switch (action.type) {
         case "LIKEPOST":
             return posts.map(post=> ( post._id === action.payload._id ? action.payload :post))
@@ -15,3 +15,5 @@ export default (posts = [], action)=>{
             return posts;
     }
 }
+
+export default v;
