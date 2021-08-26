@@ -22,4 +22,7 @@
         justify-content: space-evenly;
         flex-direction: row; 
     }
+    .text_name{
+        font-size: 20px;
+    }
 }
