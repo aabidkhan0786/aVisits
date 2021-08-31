@@ -34,8 +34,8 @@ const Form = ({ currentId, setCurrentId }) => {
         e.preventDefault();
         if (currentId === 0) {
             if (postData.creator === "" || postData.selectedFile === "") {
+                setLoad(false)
                 return alert("Please atleast fill Creator name and Image field !")
-
             }
             dispatch(createPost(postData));
             setLoad(false)
@@ -45,31 +45,31 @@ const Form = ({ currentId, setCurrentId }) => {
             clear();
             setLoad(false)
         }
-        setLoad(false)
+        
     }
     return (
         <>
-            <div className="row">
-                <div className="col-lg-10 col-md-10 col-11 mx-auto my-3">
-                    <form className="shadow-lg p-3 mb-5 bg-transparent text-dark rounded">
+            <div className="row position-fixed">
+                <div className="col-12 mx-auto my-3">
+                    <form className="shadow-lg p-2 mb-5 bg-transparent text-dark rounded">
                         <div className="row-fluid">
-                            <div className="col my-3 ">
+                            <div className="col my-2 ">
                                 <input type="text" name="creator" value={postData.creator} onChange={e => setPostData({ ...postData, creator: e.target.value })} className="form-control" placeholder="Creator" />
                             </div>
-                            <div className="col my-3">
+                            <div className="col my-2">
                                 <input type="text" name="title" value={postData.title} onChange={e => setPostData({ ...postData, title: e.target.value })} className="form-control" placeholder="Title" />
                             </div>
                         </div>
                         <div className="row-fluid">
-                            <div className="col my-3">
+                            <div className="col my-2">
                                 <input type="text" name="message" value={postData.message} onChange={e => setPostData({ ...postData, message: e.target.value })} className="form-control" placeholder="Message" />
                             </div>
-                            <div className="col my-3">
+                            <div className="col my-2">
                                 <input type="text" name="tags" value={postData.tags} onChange={e => setPostData({ ...postData, tags: e.target.value })} className="form-control" placeholder="Tags" />
                             </div>
                         </div>
                         <div className="row-fluid">
-                            <div className="col my-3">
+                            <div className="col my-2">
                                 <FileBase
                                     type="file"
                                     multiple={false}
@@ -78,9 +78,9 @@ const Form = ({ currentId, setCurrentId }) => {
                             </div>
                         </div>
                         <div className="row-fluid">
-                            <div className="col my-3">
-                                <button className="btn btn-block btn-primary my-2" onClick={handleSubmit}><i class="fas fa-dot-circle p-2"></i>{load ? "Creating..." : "Submit"}</button>
-                                <button className="btn btn-block btn-secondary my-2" onClick={clear}><i class="fas fa-broom p-2"></i>Clear</button>
+                            <div className="col my-2">
+                                <button className="btn-sm btn-block btn-primary my-2" onClick={handleSubmit}><i class="fas fa-dot-circle p-2"></i>{load ? "Creating..." : "Submit"}</button>
+                                <button className="btn-sm btn-block btn-secondary my-2" onClick={()=>clear}><i class="fas fa-broom p-2"></i>Clear</button>
                             </div>
                         </div>
                     </form>
