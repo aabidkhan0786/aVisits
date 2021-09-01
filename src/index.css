@@ -31,10 +31,11 @@ body{
     /* width: 100vw; */
     /* height:100vh; */
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     /* overflow-y: hidden; */
     /* justify-content: center; */
     /* place-items: center; */
+    /* width: 100vw; */
 }
 
 .pic_sec{
@@ -59,19 +60,20 @@ body{
 .post_side{
     padding-top: 50px;
     width: 100vw;
-    /* height: 90vh; */
-    /* overflow-y: scroll; */
     display: flex;
-    /* justify-content: space-evenly; */
+}
 
-    /* place-items: center; */
-    /* flex-direction: column; */
-    /* margin-top: 50px; */
+.fixed{
+    position: fixed;
 }
 
 @media only screen and (max-width: 600px) {
     .nav{
         width: 98vw;
+    }
+
+    .fixed{
+        position:relative ;
     }
     .parent_div{
         flex-direction: column-reverse;

@@ -49,8 +49,8 @@ const Form = ({ currentId, setCurrentId }) => {
     }
     return (
         <>
-            <div className="row position-fixed">
-                <div className="col-12 mx-auto my-3">
+            <div className="row-fluid fixed">
+                <div className="col-11 mx-auto my-3">
                     <form className="shadow-lg p-2 mb-5 bg-transparent text-dark rounded">
                         <div className="row-fluid">
                             <div className="col my-2 ">
@@ -79,8 +79,8 @@ const Form = ({ currentId, setCurrentId }) => {
                         </div>
                         <div className="row-fluid">
                             <div className="col my-2">
-                                <button className="btn-sm btn-block btn-primary my-2" onClick={handleSubmit}><i class="fas fa-dot-circle p-2"></i>{load ? "Creating..." : "Submit"}</button>
-                                <button className="btn-sm btn-block btn-secondary my-2" onClick={()=>clear}><i class="fas fa-broom p-2"></i>Clear</button>
+                                <button className="btn btn-sm btn-block btn-primary my-2" onClick={handleSubmit}><i class="fas fa-dot-circle p-2"></i>{load ? "Creating..." : "Submit"}</button>
+                                <button className="btn btn-sm btn-block btn-secondary my-2" onClick={()=>clear}><i class="fas fa-broom p-2"></i>Clear</button>
                             </div>
                         </div>
                     </form>
